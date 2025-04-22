@@ -1,5 +1,8 @@
 package com.company.reservationSystem;
 
+import com.company.component.ScrollForTheReservationOfTIckets;
+import com.company.component.Status;
+
 public class MainPage extends javax.swing.JFrame {
 
     public MainPage() {
@@ -9,17 +12,18 @@ public class MainPage extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         jScrollPane2 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
         jPanel1 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel3 = new javax.swing.JPanel();
+        homepage1 = new com.company.reservationSystem.Homepage();
+        bookingpage = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        status1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        homepage1 = new com.company.reservationSystem.Homepage();
+        jPanel3 = new javax.swing.JPanel();
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -33,6 +37,7 @@ public class MainPage extends javax.swing.JFrame {
 
         jTabbedPane1.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
         jTabbedPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jTabbedPane1.addTab("HOME", homepage1);
 
         jLabel4.setBackground(new java.awt.Color(0, 150, 130));
         jLabel4.setFont(new java.awt.Font("sansserif", 1, 25)); // NOI18N
@@ -41,20 +46,27 @@ public class MainPage extends javax.swing.JFrame {
         jLabel4.setText("BOOKING");
         jLabel4.setOpaque(true);
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanel2.setLayout(new java.awt.BorderLayout());
+
+        javax.swing.GroupLayout bookingpageLayout = new javax.swing.GroupLayout(bookingpage);
+        bookingpage.setLayout(bookingpageLayout);
+        bookingpageLayout.setHorizontalGroup(
+            bookingpageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 843, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        bookingpageLayout.setVerticalGroup(
+            bookingpageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bookingpageLayout.createSequentialGroup()
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 454, Short.MAX_VALUE))
+                .addGap(0, 0, 0)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jTabbedPane1.addTab("BOOKING", jPanel3);
+        ScrollForTheReservationOfTIckets scrollableBook = new ScrollForTheReservationOfTIckets();
+        jPanel2.add(scrollableBook);
+
+        jTabbedPane1.addTab("BOOKING", bookingpage);
 
         jLabel1.setBackground(new java.awt.Color(0, 150, 130));
         jLabel1.setFont(new java.awt.Font("sansserif", 1, 20)); // NOI18N
@@ -63,22 +75,27 @@ public class MainPage extends javax.swing.JFrame {
         jLabel1.setText("STATUS");
         jLabel1.setOpaque(true);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 843, Short.MAX_VALUE)
+        jPanel3.setLayout(new java.awt.BorderLayout());
+
+        javax.swing.GroupLayout status1Layout = new javax.swing.GroupLayout(status1);
+        status1.setLayout(status1Layout);
+        status1Layout.setHorizontalGroup(
+            status1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 843, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        status1Layout.setVerticalGroup(
+            status1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(status1Layout.createSequentialGroup()
                 .addGap(0, 0, 0)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(454, Short.MAX_VALUE))
+                .addGap(0, 0, 0)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("STATUS", jPanel2);
-        jTabbedPane1.addTab("tab3", homepage1);
+        jPanel3.add(new Status(id));
+
+        jTabbedPane1.addTab("STATUS", status1);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -107,8 +124,10 @@ public class MainPage extends javax.swing.JFrame {
     
     
     
-
+    //Custom Variables
+    private String id;
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel bookingpage;
     private com.company.reservationSystem.Homepage homepage1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
@@ -118,5 +137,6 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JPanel status1;
     // End of variables declaration//GEN-END:variables
 }
